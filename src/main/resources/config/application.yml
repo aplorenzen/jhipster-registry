@@ -47,7 +47,7 @@ management:
         web:
             base-path: /management
             exposure:
-                include: ["configprops", "env", "health", "info", "jhimetrics", "logfile", "loggers", "threaddump"]
+                include: ["configprops", "env", "health", "info", "jhimetrics", "logfile", "loggers", "threaddump", "prometheus"]
     endpoint:
         health:
             show-details: when_authorized
@@ -55,6 +55,10 @@ management:
         mail:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
     metrics:
+        export:
+            prometheus:
+                enabled: true
+                step: 60
         enable:
             http: true
             jvm: true

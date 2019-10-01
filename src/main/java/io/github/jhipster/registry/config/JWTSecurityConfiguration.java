@@ -96,7 +96,8 @@ public class JWTSecurityConfiguration extends WebSecurityConfigurerAdapter {
         web.ignoring()
             .antMatchers("/app/**/*.{js,html}")
             .antMatchers("/swagger-ui/**")
-            .antMatchers("/content/**");
+            .antMatchers("/content/**")
+            .antMatchers("/management/prometheus");
     }
 
     @Override
@@ -126,6 +127,7 @@ public class JWTSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/profile-info").permitAll()
             .antMatchers("/api/**").authenticated()
             .antMatchers("/management/health").permitAll()
+            .antMatchers("/management/prometheus").permitAll()
             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/v2/api-docs/**").permitAll()
             .antMatchers("/swagger-resources/configuration/**").permitAll()
