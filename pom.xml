@@ -897,6 +897,7 @@
                     <plugin>
                         <groupId>pl.project13.maven</groupId>
                         <artifactId>git-commit-id-plugin</artifactId>
+                        <version>${git-commit-id-plugin.version}</version>
                     </plugin>
                 </plugins>
             </build>
